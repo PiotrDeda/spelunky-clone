@@ -1,0 +1,1 @@
+As Unity doesn't have native support for font from individual png files, this is a temporary solution to get the Spelunky Classic font in. It will be reworked in the future.
