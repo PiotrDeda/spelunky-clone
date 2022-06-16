@@ -12,7 +12,7 @@ public class DamageHitbox : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D collision)
 	{
-		DamageSource damageSource = collision.gameObject.GetComponent<DamageSource>();
+		var damageSource = collision.gameObject.GetComponent<DamageSource>();
 		if (damageSource && DamageSources.Contains(damageSource.Type))
 		{
 			damageSourceColliding.Invoke(damageSource);

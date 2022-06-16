@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pushable : MonoBehaviour
 {
-	[field: SerializeField] public Rigidbody2D EntityRigidbody;
+	[field: SerializeField] public Rigidbody2D EntityRigidbody { get; protected set; }
 
 	public void Push()
 	{

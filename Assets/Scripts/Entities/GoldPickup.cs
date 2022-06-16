@@ -7,16 +7,16 @@ public class GoldPickup : MonoBehaviour
 {
 	[field: SerializeField] public int BaseGold { get; set; }
 
-	public UnityEvent<int> GoldPickedUp;
+	public UnityEvent<int> goldPickedUp;
 
 	void Start()
 	{
-		GoldPickedUp.AddListener(GameManager.Instance.Player.GetComponent<Player>().AddGold);
+		goldPickedUp.AddListener(GameManager.Instance.Player.GetComponent<Player>().AddGold);
 	}
 
 	public void PickedUp()
 	{
-		GoldPickedUp.Invoke(GetFloorGoldValue());
+		goldPickedUp.Invoke(GetFloorGoldValue());
 		Destroy(gameObject);
 	}
 

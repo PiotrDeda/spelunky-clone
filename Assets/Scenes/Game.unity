@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdac0aa3c97df54d95f880c548f77a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letterContainer: {fileID: 377874100}
+  <LetterContainer>k__BackingField: {fileID: 377874100}
 --- !u!114 &377874100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9390314e6cd5140b5d8fabf8935fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letters:
+  <Letters>k__BackingField:
   - {fileID: 641675857}
   - {fileID: 1772496650}
 --- !u!1001 &379583107
@@ -3702,7 +3702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de73614bba7c6fd44b36e3f402081cac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letterContainer: {fileID: 1226743865}
+  <LetterContainer>k__BackingField: {fileID: 1226743865}
 --- !u!114 &1226743865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3715,7 +3715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9390314e6cd5140b5d8fabf8935fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letters:
+  <Letters>k__BackingField:
   - {fileID: 28178202}
   - {fileID: 1845622325}
 --- !u!1001 &1233095734
@@ -4042,15 +4042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea19f50219a2ba64bb542cb8df4fc1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <LevelObjects>k__BackingField:
-  - Character: 49
-    Object: {fileID: 900302089577443850, guid: 556cf74dd2bebbf41aa96a9bcd426008, type: 3}
-  - Character: 116
-    Object: {fileID: 7762530390665595978, guid: b927e9296fbddfa4592d1b21ebd9f499, type: 3}
-  - Character: 115
-    Object: {fileID: 2554392044051913377, guid: d4eeb4201071bf7448236f8985787209, type: 3}
-  - Character: 98
-    Object: {fileID: 1647301730079532077, guid: cbdf0af69f771d146b0bdc52938de9c2, type: 3}
+  <LevelObjects>k__BackingField: []
 --- !u!1 &1468605801
 GameObject:
   m_ObjectHideFlags: 0
@@ -4111,7 +4103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3429cea52e6ad7441afef2e13fb22f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letterContainer: {fileID: 1468605804}
+  <LetterContainer>k__BackingField: {fileID: 1468605804}
 --- !u!114 &1468605804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4124,7 +4116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9390314e6cd5140b5d8fabf8935fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letters:
+  <Letters>k__BackingField:
   - {fileID: 1755861544}
   - {fileID: 528580915}
   - {fileID: 1127547027}
@@ -4707,7 +4699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fa78cd2486d08468032888f7f51da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letterContainer: {fileID: 1830939735}
+  <LetterContainer>k__BackingField: {fileID: 1830939735}
 --- !u!114 &1830939735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4720,7 +4712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9390314e6cd5140b5d8fabf8935fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _letters:
+  <Letters>k__BackingField:
   - {fileID: 1734377541}
   - {fileID: 1087174517}
 --- !u!1001 &1834020068
@@ -5254,7 +5246,7 @@ MonoBehaviour:
   <GroundDetection>k__BackingField: {fileID: 697891356550120056}
   <WhipAnimator>k__BackingField: {fileID: 697891356921281973}
   <HealthContainer>k__BackingField: {fileID: 697891355698703633}
-  HealthChanged:
+  healthChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1830939734}
@@ -5269,7 +5261,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  BombsChanged:
+  bombsChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1226743864}
@@ -5284,7 +5276,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  RopesChanged:
+  ropesChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 377874099}
@@ -5299,7 +5291,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  GoldChanged:
+  goldChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1468605803}
@@ -5349,7 +5341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec55e144f2fa71640bc9723bf149e5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntityRigidbody: {fileID: 697891355698703625}
+  <EntityRigidbody>k__BackingField: {fileID: 697891355698703625}
 --- !u!114 &697891355698703633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5362,11 +5354,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e693a5d91eac7ad48b09b9c87d31c53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntitySpriteRenderer: {fileID: 697891355698703621}
+  <EntitySpriteRenderer>k__BackingField: {fileID: 697891355698703621}
   <StartingHealth>k__BackingField: 4
   <Iframes>k__BackingField: 1
   <DestroyOnDeath>k__BackingField: 0
-  TookDamageAmount:
+  tookDamageAmount:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 697891355698703630}
@@ -5381,7 +5373,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  TookDamageSource:
+  tookDamageSource:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 697891355698703632}
@@ -5396,7 +5388,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Healed:
+  healed:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 697891355698703630}
@@ -5411,7 +5403,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  Died:
+  died:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 697891355698703630}

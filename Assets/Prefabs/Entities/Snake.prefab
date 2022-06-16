@@ -263,20 +263,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e693a5d91eac7ad48b09b9c87d31c53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EntitySpriteRenderer: {fileID: 2554392044051913379}
+  <EntitySpriteRenderer>k__BackingField: {fileID: 2554392044051913379}
   <StartingHealth>k__BackingField: 1
   <Iframes>k__BackingField: 1
   <DestroyOnDeath>k__BackingField: 1
-  TookDamageAmount:
+  tookDamageAmount:
     m_PersistentCalls:
       m_Calls: []
-  TookDamageSource:
+  tookDamageSource:
     m_PersistentCalls:
       m_Calls: []
-  Healed:
+  healed:
     m_PersistentCalls:
       m_Calls: []
-  Died:
+  died:
     m_PersistentCalls:
       m_Calls: []
 --- !u!50 &2554392044051913373

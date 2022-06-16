@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class LetterContainer : MonoBehaviour
 {
-	public Letter[] Letters { get => _letters; private set => _letters = value; }
-
-	[SerializeField] private Letter[] _letters;
+	[field: SerializeField] public Letter[] Letters { get; protected set; }
 
 	public void SetText(string text)
 	{
-		if (text.Length < _letters.Length)
-		{
-			text = text.PadRight(_letters.Length);
-		}
-		else
-		{
-			text = text.Substring(text.Length - _letters.Length);
-		}
+		text = text.Length < Letters.Length ? text.PadRight(Letters.Length) : text[..(Letters.Length - 1)] + ".";
 		for (int i = 0; i < Letters.Length; i++)
 		{
 			Letters[i].SetCharacter(text[i]);

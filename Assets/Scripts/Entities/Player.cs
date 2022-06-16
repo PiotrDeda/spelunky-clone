@@ -23,10 +23,10 @@ public class Player : Entity
 	[field: SerializeField] public HealthContainer HealthContainer { get; protected set; }
 
 	[field: Header("Events")]
-	public UnityEvent<int> HealthChanged;
-	public UnityEvent<int> BombsChanged;
-	public UnityEvent<int> RopesChanged;
-	public UnityEvent<int> GoldChanged;
+	public UnityEvent<int> healthChanged;
+	public UnityEvent<int> bombsChanged;
+	public UnityEvent<int> ropesChanged;
+	public UnityEvent<int> goldChanged;
 
 	public int Bombs { get; protected set; } = 4;
 	public int Ropes { get; protected set; } = 4;
@@ -44,10 +44,10 @@ public class Player : Entity
 
 	void Start()
 	{
-		HealthChanged.Invoke(HealthContainer.Health);
-		BombsChanged.Invoke(Bombs);
-		RopesChanged.Invoke(Ropes);
-		GoldChanged.Invoke(Gold);
+		healthChanged.Invoke(HealthContainer.Health);
+		bombsChanged.Invoke(Bombs);
+		ropesChanged.Invoke(Ropes);
+		goldChanged.Invoke(Gold);
 	}
 
 	void Update()
@@ -87,10 +87,7 @@ public class Player : Entity
 				break;
 		}
 
-		if (GroundDetection.IsTouchingGround)
-			Animator.SetBool("Is Touching Ground", true);
-		else
-			Animator.SetBool("Is Touching Ground", false);
+		Animator.SetBool("Is Touching Ground", GroundDetection.IsTouchingGround);
 	}
 
 	/* 
@@ -153,14 +150,14 @@ public class Player : Entity
 	{
 		if (HealthContainer.Health > MaxHealth)
 			HealthContainer.Health = MaxHealth;
-		HealthChanged.Invoke(HealthContainer.Health);
+		healthChanged.Invoke(HealthContainer.Health);
 	}
 
 	public void Heal()
 	{
 		if (HealthContainer.Health > MaxHealth)
 			HealthContainer.Health = MaxHealth;
-		HealthChanged.Invoke(HealthContainer.Health);
+		healthChanged.Invoke(HealthContainer.Health);
 	}
 
 	public void Die()
@@ -177,7 +174,7 @@ public class Player : Entity
 		Bombs += amount;
 		if (Bombs > 99)
 			Bombs = 99;
-		BombsChanged.Invoke(Bombs);
+		bombsChanged.Invoke(Bombs);
 	}
 
 	public void RemoveBombs(int amount)
@@ -185,7 +182,7 @@ public class Player : Entity
 		Bombs -= amount;
 		if (Bombs > 99)
 			Bombs = 99;
-		BombsChanged.Invoke(Bombs);
+		bombsChanged.Invoke(Bombs);
 	}
 
 	public void AddRopes(int amount)
@@ -193,7 +190,7 @@ public class Player : Entity
 		Ropes += amount;
 		if (Ropes > 99)
 			Ropes = 99;
-		RopesChanged.Invoke(Ropes);
+		ropesChanged.Invoke(Ropes);
 	}
 
 	public void RemoveRopes(int amount)
@@ -201,19 +198,19 @@ public class Player : Entity
 		Ropes -= amount;
 		if (Ropes > 99)
 			Ropes = 99;
-		RopesChanged.Invoke(Ropes);
+		ropesChanged.Invoke(Ropes);
 	}
 
 	public void AddGold(int amount)
 	{
 		Gold += amount;
-		GoldChanged.Invoke(Gold);
+		goldChanged.Invoke(Gold);
 	}
 
 	public void RemoveGold(int amount)
 	{
 		Gold -= amount;
-		GoldChanged.Invoke(Gold);
+		goldChanged.Invoke(Gold);
 	}
 
 	protected void AttackFinished() => Attacking = false;

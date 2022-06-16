@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class HeartCounter : MonoBehaviour
 {
-	public LetterContainer LetterContainer { get => _letterContainer; private set => _letterContainer = value; }
-
-	[SerializeField] private LetterContainer _letterContainer;
+	[field: SerializeField] public LetterContainer LetterContainer { get; protected set; }
 
 	public void UpdateHealth(int health)
 	{

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class HealthContainer : MonoBehaviour
 {
-	[field: SerializeField] public SpriteRenderer EntitySpriteRenderer;
+	[field: SerializeField] public SpriteRenderer EntitySpriteRenderer { get; protected set; }
 
 	[field: SerializeField] public int StartingHealth { get; set; } = 1;
 	[field: SerializeField] public float Iframes { get; set; } = 1.0f;
@@ -14,10 +14,10 @@ public class HealthContainer : MonoBehaviour
 	public int Health { get; set; } = 1;
 	public bool IsIFrameInvisible { get; protected set; } = false;
 
-	public UnityEvent<int> TookDamageAmount;
-	public UnityEvent<Transform> TookDamageSource;
-	public UnityEvent<int> Healed;
-	public UnityEvent Died;
+	public UnityEvent<int> tookDamageAmount;
+	public UnityEvent<Transform> tookDamageSource;
+	public UnityEvent<int> healed;
+	public UnityEvent died;
 
 	void Awake()
 	{
@@ -31,8 +31,8 @@ public class HealthContainer : MonoBehaviour
 		Health -= damageAmount;
 		if (Health < 0)
 			Health = 0;
-		TookDamageAmount.Invoke(damageAmount);
-		TookDamageSource.Invoke(sourceTransform);
+		tookDamageAmount.Invoke(damageAmount);
+		tookDamageSource.Invoke(sourceTransform);
 		if (Health == 0)
 			Die();
 		IsIFrameInvisible = true;
@@ -47,14 +47,14 @@ public class HealthContainer : MonoBehaviour
 		Health += healAmount;
 		if (Health < 0)
 			Health = 0;
-		Healed.Invoke(healAmount);
+		healed.Invoke(healAmount);
 		if (Health == 0)
 			Die();
 	}
 
 	public void Die()
 	{
-		Died.Invoke();
+		died.Invoke();
 		if (DestroyOnDeath)
 			Destroy(gameObject);
 	}

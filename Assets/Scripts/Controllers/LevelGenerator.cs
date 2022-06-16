@@ -9,20 +9,18 @@ public class LevelGenerator : MonoBehaviour
 
 	void Start()
 	{
-		List<string> levelLines = System.IO.File.ReadAllLines("Assets/Levels/test.txt").ToList();
+		var levelLines = System.IO.File.ReadAllLines("Assets/Levels/test.txt");
 		float x = 0, y = 0;
 		foreach (string line in levelLines)
 		{
 			foreach (char character in line)
 			{
-				foreach (LevelObject levelObject in LevelObjects)
+				foreach (LevelObject levelObject in LevelObjects.Where(levelObject => character == levelObject.Character))
 				{
-					if (character == levelObject.Character)
-					{
-						Instantiate(levelObject.Object, new Vector3(x, y), Quaternion.identity);
-						break;
-					}
+					Instantiate(levelObject.Object, new Vector3(x, y), Quaternion.identity);
+					break;
 				}
+
 				x++;
 			}
 			x = 0;
@@ -34,6 +32,6 @@ public class LevelGenerator : MonoBehaviour
 [System.Serializable]
 public struct LevelObject
 {
-	public char Character;
-	public GameObject Object;
+	public char Character { get; set; }
+	public GameObject Object { get; set; }
 }

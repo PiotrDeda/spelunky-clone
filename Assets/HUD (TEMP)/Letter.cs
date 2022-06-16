@@ -6,16 +6,19 @@ using UnityEngine.UI;
 
 public class Letter : MonoBehaviour
 {
-	public SpriteAtlas FontAtlas { get => _fontAtlas; private set => _fontAtlas = value; }
-
-	[SerializeField] private SpriteAtlas _fontAtlas;
+	[field: SerializeField] public SpriteAtlas FontAtlas { get; protected set; }
 
 	public void SetCharacter(char character)
 	{
-		Sprite letterSprite = _fontAtlas.GetSprite(character.ToString().ToUpper());
-		if (letterSprite)
-			GetComponent<Image>().sprite = letterSprite;
-		else
-			GetComponent<Image>().sprite = _fontAtlas.GetSprite("Space");
+		Sprite letterSprite = FontAtlas.GetSprite(CharToFont(character));
+		GetComponent<Image>().sprite = letterSprite ? letterSprite : FontAtlas.GetSprite("Space");
 	}
+
+	protected static string CharToFont(char character) =>
+		character switch
+		{
+			' ' => "Space",
+			'.' => "Dot",
+			_ => character.ToString().ToUpper()
+		};
 }
